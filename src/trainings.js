@@ -20,7 +20,7 @@ export const trainings = [
     slug: 'digital-accessibility-101',
     title: 'Digital Accessibility 101',
     description:
-      'An interactive, slide-based training that gives anyone on a digital product team a working understanding of web accessibility, WCAG 2.2, and how disability shows up in everyday product use — including a hands-on knowledge check.',
+      'An interactive, training that gives anyone on a digital product team a working understanding of web accessibility, WCAG 2.2 AA, and how disability shows up in everyday product use; including a hands-on knowledge check.',
     duration: '15–20 min',
     difficulty: 'Beginner',
     embedUrl: '/modules/digital-accessibility-101/index.html',
