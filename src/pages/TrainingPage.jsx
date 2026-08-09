@@ -2,6 +2,29 @@ import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getTrainingBySlug } from '../trainings'
 
+const MAIN_SITE_URL = 'https://truenorth-accessibility.com'
+
+function TrainingBarNav({ title }) {
+  return (
+    <div className="training-bar__inner">
+      <nav className="training-bar__nav" aria-label="Training navigation">
+        <Link to="/" className="training-bar__back">
+          ← Back to Library
+        </Link>
+        <a className="training-bar__home" href={MAIN_SITE_URL}>
+          TrueNorth Accessibility home
+        </a>
+      </nav>
+      {title ? (
+        <p className="training-bar__title">
+          <span className="visually-hidden">Current training: </span>
+          {title}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
 export default function TrainingPage() {
   const { slug } = useParams()
   const training = getTrainingBySlug(slug)
@@ -21,11 +44,7 @@ export default function TrainingPage() {
           Skip to main content
         </a>
         <header className="training-bar" role="banner">
-          <div className="training-bar__inner">
-            <Link to="/" className="training-bar__back">
-              ← Back to Library
-            </Link>
-          </div>
+          <TrainingBarNav />
         </header>
         <main id="main-content" className="main container" tabIndex={-1}>
           <h1>Training not found</h1>
@@ -44,15 +63,7 @@ export default function TrainingPage() {
   return (
     <div className="page page--training">
       <header className="training-bar" role="banner">
-        <div className="training-bar__inner">
-          <Link to="/" className="training-bar__back">
-            ← Back to Library
-          </Link>
-          <p className="training-bar__title">
-            <span className="visually-hidden">Current training: </span>
-            {training.title}
-          </p>
-        </div>
+        <TrainingBarNav title={training.title} />
       </header>
 
       <main id="main-content" className="training-frame-wrap" tabIndex={-1}>

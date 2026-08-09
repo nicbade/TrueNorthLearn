@@ -25,24 +25,6 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/digital-accessibility-101/index.html',
   },
-  {
-    slug: 'keyboard-and-focus',
-    title: 'Keyboard Access & Focus',
-    description:
-      'Practice evaluating keyboard operability, focus order, and visible focus indicators against WCAG 2.4.3, 2.4.7, and 2.4.11.',
-    duration: '60 min',
-    difficulty: 'Intermediate',
-    embedUrl: '/modules/keyboard-and-focus/index.html',
-  },
-  {
-    slug: 'screen-reader-basics',
-    title: 'Screen Reader Testing Basics',
-    description:
-      'A guided introduction to testing with NVDA and VoiceOver, including what to listen for and how to document findings.',
-    duration: '90 min',
-    difficulty: 'Intermediate',
-    embedUrl: '/modules/screen-reader-basics/index.html',
-  },
 ]
 
 export function getTrainingBySlug(slug) {

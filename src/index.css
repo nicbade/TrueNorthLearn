@@ -476,7 +476,16 @@ code {
   gap: var(--space-4);
 }
 
-.training-bar__back {
+.training-bar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+  min-width: 0;
+}
+
+.training-bar__back,
+.training-bar__home {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--forest);
@@ -484,7 +493,8 @@ code {
   white-space: nowrap;
 }
 
-.training-bar__back:hover {
+.training-bar__back:hover,
+.training-bar__home:hover {
   color: var(--forest-dark);
   text-decoration: underline;
 }
