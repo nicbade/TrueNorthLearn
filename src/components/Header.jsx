@@ -4,10 +4,10 @@ export default function Header() {
   return (
     <header className="site-header" role="banner">
       <div className="site-header__inner">
-        <Link
-          to="/"
+        <a
+          href="https://truenorth-accessibility.com"
           className="brand"
-          aria-label="TrueNorth Accessibility — Training Library home"
+          aria-label="TrueNorth Accessibility home"
         >
           <span className="brand__mark" aria-hidden="true">
             <svg viewBox="0 0 40 40" width="40" height="40" focusable="false">
@@ -23,7 +23,7 @@ export default function Header() {
             <span className="brand__name">TrueNorth</span>
             <span className="brand__tag">Accessibility</span>
           </span>
-        </Link>
+        </a>
 
         <nav className="site-nav" aria-label="Primary">
           <a
