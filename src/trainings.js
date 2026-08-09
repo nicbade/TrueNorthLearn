@@ -3,8 +3,9 @@
  *
  * To add a new training:
  * 1. Export the Figma Make module as a standalone HTML/React app
- * 2. Place it under public/modules/<slug>/ (or host it elsewhere)
- * 3. Add an object to this array — the hub and routes pick it up automatically
+ * 2. Build it with base path /modules/<slug>/ (or host it elsewhere)
+ * 3. Place the build under public/modules/<slug>/
+ * 4. Add an object to this array — the hub and routes pick it up automatically
  *
  * Fields:
  * - slug        URL path segment (/training/<slug>)
@@ -16,13 +17,13 @@
  */
 export const trainings = [
   {
-    slug: 'intro-to-wcag',
-    title: 'Introduction to WCAG 2.2',
+    slug: 'digital-accessibility-101',
+    title: 'Digital Accessibility 101',
     description:
-      'Learn the structure of WCAG 2.2, the four POUR principles, and how to read success criteria for real product work.',
-    duration: '45 min',
+      'An interactive, slide-based training that gives anyone on a digital product team a working understanding of web accessibility, WCAG 2.2, and how disability shows up in everyday product use — including a hands-on knowledge check.',
+    duration: '15–20 min',
     difficulty: 'Beginner',
-    embedUrl: '/modules/intro-to-wcag/index.html',
+    embedUrl: '/modules/digital-accessibility-101/index.html',
   },
   {
     slug: 'keyboard-and-focus',
