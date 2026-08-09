@@ -39,20 +39,22 @@ Opening a card loads `/training/<slug>`, which shows your export inside a full-h
 
 ## Before you start
 
-- [ ] The training is finished (or ready enough) in Figma Make
-- [ ] You have this repo cloned locally
-- [ ] You can run `npm run dev` to preview locally
-- [ ] Netlify is connected to this GitHub repo (after the first deploy)
+- The training is finished (or ready enough) in Figma Make
+- You have this repo cloned locally
+- You can run `npm run dev` to preview locally
+- Netlify is connected to this GitHub repo (after the first deploy)
 
 Pick a **slug** now — a short, URL-safe name with only lowercase letters, numbers, and hyphens.
 
 Examples:
 
-| Training title | Slug |
-| --- | --- |
-| Introduction to WCAG 2.2 | `intro-to-wcag` |
-| Keyboard Access & Focus | `keyboard-and-focus` |
-| Forms & Error Messages | `forms-and-errors` |
+
+| Training title           | Slug                 |
+| ------------------------ | -------------------- |
+| Introduction to WCAG 2.2 | `intro-to-wcag`      |
+| Keyboard Access & Focus  | `keyboard-and-focus` |
+| Forms & Error Messages   | `forms-and-errors`   |
+
 
 The public URL will be:
 
@@ -63,8 +65,8 @@ The public URL will be:
 ## Step 1 — Export the training from Figma Make
 
 1. Open the training project in **Figma Make**.
-2. Use Make’s **export / download / publish** option for a **standalone** web build  
-   (HTML + assets that can run on their own — not a design file only).
+2. Use Make’s **export / download / publish** option for a **standalone** web build
+  (HTML + assets that can run on their own — not a design file only).
 3. Download the zip (or folder) to your computer.
 4. Unzip it if needed.
 
@@ -86,29 +88,21 @@ Open that `index.html` in a browser by double-clicking it. If the training loads
 ## Step 2 — Copy the export into this project
 
 1. In this repo, go to:
-
-   ```
+  ```
    public/modules/
-   ```
-
+  ```
 2. Create a new folder named exactly your **slug**:
-
-   ```
+  ```
    public/modules/<slug>/
-   ```
-
+  ```
    Example:
-
-   ```
+  ```
    public/modules/forms-and-errors/
-   ```
-
+  ```
 3. Copy **all** files from the Figma Make export into that folder so that this path exists:
-
-   ```
+  ```
    public/modules/<slug>/index.html
-   ```
-
+  ```
 4. Keep relative asset folders intact (for example `assets/` next to `index.html`).
 
 ### Example result
@@ -135,11 +129,9 @@ You can skip copying files into `public/modules/` and instead point `embedUrl` a
 ## Step 3 — Register the training in `src/trainings.js`
 
 1. Open:
-
-   ```
+  ```
    src/trainings.js
-   ```
-
+  ```
 2. Add a new object to the `trainings` array (copy an existing entry and edit it).
 
 ```js
@@ -156,14 +148,16 @@ You can skip copying files into `public/modules/` and instead point `embedUrl` a
 
 ### Field meanings
 
-| Field | What to put |
-| --- | --- |
-| `slug` | Same as the folder name; used in the URL |
-| `title` | Shown on the hub card and the training bar |
-| `description` | Short summary on the hub card (1–2 sentences) |
-| `duration` | Human-readable estimate (`45 min`, `1.5 hours`) |
-| `difficulty` | `Beginner`, `Intermediate`, or `Advanced` |
-| `embedUrl` | Path or URL loaded in the iframe |
+
+| Field         | What to put                                     |
+| ------------- | ----------------------------------------------- |
+| `slug`        | Same as the folder name; used in the URL        |
+| `title`       | Shown on the hub card and the training bar      |
+| `description` | Short summary on the hub card (1–2 sentences)   |
+| `duration`    | Human-readable estimate (`45 min`, `1.5 hours`) |
+| `difficulty`  | `Beginner`, `Intermediate`, or `Advanced`       |
+| `embedUrl`    | Path or URL loaded in the iframe                |
+
 
 ### Local module (most common)
 
@@ -195,10 +189,10 @@ npm run dev
 2. Confirm the new card appears on the hub.
 3. Click **Start training**.
 4. Confirm:
-   - The URL is `/training/<slug>`
-   - “Back to Library” works
-   - The iframe shows your Figma Make content
-   - Keyboard focus and basic navigation feel OK
+  - The URL is `/training/<slug>`
+  - “Back to Library” works
+  - The iframe shows your Figma Make content
+  - Keyboard focus and basic navigation feel OK
 
 ### If the iframe is blank
 
@@ -233,14 +227,10 @@ If Netlify is connected to GitHub, it will build and deploy automatically.
 
 1. Wait for the Netlify deploy to finish (Netlify dashboard → Deploys).
 2. Open:
-
-   `https://learn.truenorth-accessibility.com/`
-
+  `https://learn.truenorth-accessibility.com/`
 3. Confirm the new card.
 4. Open:
-
-   `https://learn.truenorth-accessibility.com/training/<slug>`
-
+  `https://learn.truenorth-accessibility.com/training/<slug>`
 5. Spot-check with keyboard and, if possible, a screen reader.
 
 ---
@@ -273,48 +263,59 @@ Only needed once per environment.
 1. Push this project to GitHub.
 2. Netlify → **Add new site** → import the repo.
 3. Build settings (also in `netlify.toml`):
-   - Build command: `npm run build`
-   - Publish directory: `dist`
+  - Build command: `npm run build`
+  - Publish directory: `dist`
 
 ### Point the subdomain
 
-1. Netlify → **Domain management** → add `learn.truenorth-accessibility.com`.
-2. At your DNS provider, create:
+1. Netlify → **Domain management** → add `learn.truenorth-accessibility.com`
+   and make it the primary domain. Add **only** the subdomain here.
+2. At whichever provider is authoritative for the zone, create:
 
-   | Type | Name | Value |
-   | --- | --- | --- |
-   | CNAME | `learn` | `<your-site>.netlify.app` |
+  | Type  | Name    | Value                     |
+  | ----- | ------- | ------------------------- |
+  | CNAME | `learn` | `<your-site>.netlify.app` |
 
+   On Netlify DNS (nameservers `dns1–4.p02.nsone.net`) this record is created
+   for you when the subdomain is added to the site.
 3. Wait for DNS + HTTPS to become active in Netlify.
 
-The **apex** site (`truenorth-accessibility.com`) stays on its own host (e.g. GitHub Pages). This learning app is separate.
+The **apex** site (`truenorth-accessibility.com`) stays on GitHub Pages. This learning app is separate.
+
+> **Do not add the apex to this Netlify site.** Attaching
+> `truenorth-accessibility.com` here pulls the marketing site away from GitHub
+> Pages and takes it offline. If that happens, remove the apex and `www` from
+> the Netlify site's domains, then restore the GitHub Pages A/AAAA/CNAME
+> records listed in the README.
 
 ---
 
 ## Quick checklist (copy for each new training)
 
-- [ ] Chose a slug
-- [ ] Exported standalone build from Figma Make
-- [ ] Copied files to `public/modules/<slug>/` with `index.html` at the top
-- [ ] Added entry to `src/trainings.js`
-- [ ] Previewed hub card + iframe locally
-- [ ] Committed and pushed
-- [ ] Verified on learn.truenorth-accessibility.com
+- Chose a slug
+- Exported standalone build from Figma Make
+- Copied files to `public/modules/<slug>/` with `index.html` at the top
+- Added entry to `src/trainings.js`
+- Previewed hub card + iframe locally
+- Committed and pushed
+- Verified on learn.truenorth-accessibility.com
 
 ---
 
 ## Troubleshooting
 
-| Problem | Likely cause | What to do |
-| --- | --- | --- |
-| Card missing on hub | Entry not in `trainings.js` or syntax error | Check the array; run `npm run dev` and watch the terminal |
-| 404 on `/training/...` | Wrong slug or deploy not finished | Match slug; wait for Netlify |
-| Blank iframe | Missing `index.html` or bad `embedUrl` | Open `/modules/<slug>/index.html` directly |
-| Broken CSS/JS in module | Absolute paths assuming site root | Use relative paths or host module separately |
-| Refresh on `/training/...` 404s | SPA redirect missing | Confirm `netlify.toml` has the `/* → /index.html` redirect |
+
+| Problem                         | Likely cause                                | What to do                                                 |
+| ------------------------------- | ------------------------------------------- | ---------------------------------------------------------- |
+| Card missing on hub             | Entry not in `trainings.js` or syntax error | Check the array; run `npm run dev` and watch the terminal  |
+| 404 on `/training/...`          | Wrong slug or deploy not finished           | Match slug; wait for Netlify                               |
+| Blank iframe                    | Missing `index.html` or bad `embedUrl`      | Open `/modules/<slug>/index.html` directly                 |
+| Broken CSS/JS in module         | Absolute paths assuming site root           | Use relative paths or host module separately               |
+| Refresh on `/training/...` 404s | SPA redirect missing                        | Confirm `netlify.toml` has the `/* → /index.html` redirect |
+
 
 ---
 
 ## Need help?
 
-Contact: **truenorth.accessibilityllc@gmail.com**
+Contact: **[truenorth.accessibilityllc@gmail.com](mailto:truenorth.accessibilityllc@gmail.com)**

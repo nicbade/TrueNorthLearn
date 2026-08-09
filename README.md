@@ -1,7 +1,7 @@
 # TrueNorth Accessibility — Training Library
 
 Standalone learning hub for TrueNorth Accessibility trainings.
-Intended deploy: **https://learn.truenorth-accessibility.com** (Netlify).
+Intended deploy: **[https://learn.truenorth-accessibility.com](https://learn.truenorth-accessibility.com)** (Netlify).
 
 Main marketing site remains at [truenorth-accessibility.com](https://truenorth-accessibility.com).
 
@@ -51,9 +51,9 @@ for a step-by-step guide from Figma Make export → local folder → `trainings.
 
 1. Build the training in Figma Make and export it as a standalone HTML/React app.
 2. Either:
-   - Copy the export into `public/modules/<slug>/` so the entry file is
-     `public/modules/<slug>/index.html`, **or**
-   - Host the export on its own URL (another Netlify site, CDN, etc.).
+  - Copy the export into `public/modules/<slug>/` so the entry file is
+   `public/modules/<slug>/index.html`, **or**
+  - Host the export on its own URL (another Netlify site, CDN, etc.).
 3. Open `src/trainings.js` and append an object to the `trainings` array:
 
 ```js
@@ -69,46 +69,62 @@ for a step-by-step guide from Figma Make export → local folder → `trainings.
 ```
 
 4. Redeploy. The hub card and `/training/my-new-training` route appear
-   automatically — no layout changes required.
+  automatically — no layout changes required.
 
 ### Field reference
 
-| Field | Purpose |
-| --- | --- |
-| `slug` | URL segment: `/training/<slug>` |
-| `title` | Card heading and training bar label |
-| `description` | Short hub summary |
-| `duration` | Human-readable estimate |
-| `difficulty` | Shown as a label on the card |
-| `embedUrl` | `iframe` `src` (path or absolute URL) |
+
+| Field         | Purpose                               |
+| ------------- | ------------------------------------- |
+| `slug`        | URL segment: `/training/<slug>`       |
+| `title`       | Card heading and training bar label   |
+| `description` | Short hub summary                     |
+| `duration`    | Human-readable estimate               |
+| `difficulty`  | Shown as a label on the card          |
+| `embedUrl`    | `iframe` `src` (path or absolute URL) |
+
 
 ## Deploy to Netlify
 
 1. Push this repo to GitHub.
 2. In Netlify: **Add new site → Import an existing project**.
 3. Build settings (also in `netlify.toml`):
-   - Build command: `npm run build`
-   - Publish directory: `dist`
+  - Build command: `npm run build`
+  - Publish directory: `dist`
 4. Deploy.
 
 ### Point `learn.truenorth-accessibility.com` at Netlify
 
-1. In Netlify: **Domain management → Add domain** →
-   `learn.truenorth-accessibility.com`.
-2. At your DNS provider (Squarespace Domains or wherever the apex lives),
-   add a **CNAME** record:
+Attach only the **subdomain** to this Netlify site. Adding the apex
+(`truenorth-accessibility.com`) here takes the whole marketing site offline,
+because it moves the apex away from GitHub Pages.
 
-   | Type | Host / Name | Value |
-   | --- | --- | --- |
-   | CNAME | `learn` | `<your-site>.netlify.app` |
+1. In Netlify: **Domain management → Add domain** →
+  `learn.truenorth-accessibility.com`, and set it as the primary domain.
+2. Add the DNS record wherever the zone is authoritative:
+
+  | Type  | Host / Name | Value                     |
+  | ----- | ----------- | ------------------------- |
+  | CNAME | `learn`     | `<your-site>.netlify.app` |
 
    Use the hostname Netlify shows (for example `truenorth-learn.netlify.app`).
+   If the zone is hosted on **Netlify DNS** (nameservers `dns1–4.p02.nsone.net`),
+   Netlify adds this record automatically when you add the subdomain.
 3. Wait for DNS propagation, then confirm HTTPS is provisioned in Netlify.
-4. Optional: set the site’s primary domain to
-   `learn.truenorth-accessibility.com` in Netlify.
 
 > Do **not** put an A record for `learn` pointing at GitHub Pages — this app
 > is separate from the main site’s GitHub Pages deploy.
+
+### Apex records the main site needs
+
+Whichever provider holds the zone, `truenorth-accessibility.com` must keep
+pointing at GitHub Pages:
+
+| Type  | Host  | Value                                                                            |
+| ----- | ----- | -------------------------------------------------------------------------------- |
+| A     | `@`   | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`         |
+| AAAA  | `@`   | `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153` |
+| CNAME | `www` | `nicbade.github.io`                                                                |
 
 ## Accessibility
 
