@@ -9,10 +9,10 @@ function TrainingBarNav({ title }) {
     <div className="training-bar__inner">
       <nav className="training-bar__nav" aria-label="Training navigation">
         <Link to="/" className="training-bar__back">
-          ← Back to Library
+          <span aria-hidden="true">← </span>Library
         </Link>
         <a className="training-bar__home" href={MAIN_SITE_URL}>
-          TrueNorth Accessibility home
+          Main site
         </a>
       </nav>
       {title ? (
