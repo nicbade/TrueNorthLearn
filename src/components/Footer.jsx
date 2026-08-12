@@ -13,8 +13,8 @@ export default function Footer() {
         <nav className="site-footer__nav" aria-label="Footer">
           <a href="https://truenorth-accessibility.com">Main site</a>
           <a href="https://truenorth-accessibility.com/contact">Contact</a>
-          <a href="mailto:truenorth.accessibilityllc@gmail.com">
-            truenorth.accessibilityllc@gmail.com
+          <a href="mailto:hello@truenorth-accessibility.com">
+            hello@truenorth-accessibility.com
           </a>
         </nav>
         <p className="site-footer__copy">
