@@ -25,6 +25,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/digital-accessibility-101/index.html',
   },
+  {
+    slug: 'color-contrast-101',
+    title: 'Color Contrast 101',
+    description:
+      'An interactive training on WCAG color contrast for designers, developers, and QA — why it fails so often, the ratios that matter, how to check them, and common mistakes to avoid.',
+    duration: '10 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/color-contrast-101/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
