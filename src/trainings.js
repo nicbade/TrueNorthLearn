@@ -34,6 +34,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/color-contrast-101/index.html',
   },
+  {
+    slug: 'image-accessibility-101',
+    title: 'Image Accessibility 101',
+    description:
+      'Interactive self-paced training on writing accessible image descriptions, with clear slides, examples, and quizzes to build web accessibility skills.',
+    duration: '15–20 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/image-accessibility-101/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
