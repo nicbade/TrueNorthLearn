@@ -8,6 +8,8 @@
   --slate: #595959;
   --forest: #2a5c1e;
   --forest-dark: #1e4415;
+  --forest-btn: #2a5c1e;
+  --forest-btn-hover: #1e4415;
   --navy: #1e3a5f;
   --divider: #d9d5cd;
   --white: #ffffff;
@@ -32,6 +34,31 @@
   --max-width: 68rem;
   --header-height: 4.25rem;
   --training-bar-height: 3.5rem;
+
+  color-scheme: light;
+}
+
+/*
+ * Dark theme — aligned with truenorth-accessibility.com
+ * text ≥ 4.5:1, UI components / focus / borders ≥ 3:1
+ */
+[data-theme='dark'] {
+  --cream: #161513;
+  --surface: #242220;
+  --ink: #f0ede8;
+  --slate: #a3a09a;
+  --forest: #6ba85c;
+  --forest-dark: #5a944c;
+  --forest-btn: #2a5c1e;
+  --forest-btn-hover: #1e4415;
+  --navy: #f0ede8;
+  --divider: #75706a;
+  --white: #ffffff;
+
+  --focus-ring: #f0ede8;
+  --focus-halo: #ffffff;
+
+  color-scheme: dark;
 }
 
 *,
@@ -146,7 +173,7 @@ code {
   z-index: 1000;
   transform: translateY(-120%);
   padding: var(--space-3) var(--space-4);
-  background: var(--forest);
+  background: var(--forest-btn);
   color: var(--white);
   font-weight: 500;
   text-decoration: none;
@@ -237,6 +264,24 @@ code {
   color: var(--slate);
 }
 
+.brand-mark__circle,
+.brand-mark__center {
+  fill: #1e3a5f;
+}
+
+.brand-mark__star {
+  fill: #ffffff;
+}
+
+[data-theme='dark'] .brand-mark__circle,
+[data-theme='dark'] .brand-mark__center {
+  fill: #ffffff;
+}
+
+[data-theme='dark'] .brand-mark__star {
+  fill: #000000;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -257,6 +302,24 @@ code {
 
 .site-nav__link--current {
   color: var(--forest);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: var(--space-2);
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--slate);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--ink);
 }
 
 /* Hub intro */
@@ -375,7 +438,7 @@ code {
   align-self: flex-start;
   display: inline-block;
   padding: 0.65rem 1.1rem;
-  background: var(--forest);
+  background: var(--forest-btn);
   color: var(--white);
   font-size: 0.9rem;
   font-weight: 500;
@@ -384,7 +447,7 @@ code {
 }
 
 .training-card__cta:hover {
-  background: var(--forest-dark);
+  background: var(--forest-btn-hover);
   color: var(--white);
 }
 

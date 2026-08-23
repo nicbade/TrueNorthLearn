@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import ThemeToggle from '../components/ThemeToggle'
 import { getTrainingBySlug } from '../trainings'
 
 const MAIN_SITE_URL = 'https://truenorth-accessibility.com'
@@ -14,6 +15,7 @@ function TrainingBarNav({ title }) {
         <a className="training-bar__home" href={MAIN_SITE_URL}>
           Main site
         </a>
+        <ThemeToggle />
       </nav>
       {title ? (
         <p className="training-bar__title">
