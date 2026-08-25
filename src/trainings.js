@@ -43,6 +43,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/image-accessibility-101/index.html',
   },
+  {
+    slug: 'assistive-technology-101',
+    title: 'Introduction to Assistive Technologies',
+    description:
+      'A short overview of assistive technology — what it is, who uses it, and how structure and keyboard access make digital products work with the tools people rely on.',
+    duration: '10–15 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/assistive-technology-101/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
