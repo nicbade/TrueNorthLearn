@@ -52,6 +52,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/assistive-technology-101/index.html',
   },
+  {
+    slug: 'introduction-to-screen-readers',
+    title: 'Introduction to Screen Readers',
+    description:
+      'A light, high-level intro to screen readers — what they do, the major tools people use, how navigation works, and common myths — before the hands-on courses.',
+    duration: '10–15 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/introduction-to-screen-readers/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
