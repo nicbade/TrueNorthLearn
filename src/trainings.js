@@ -61,6 +61,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/introduction-to-screen-readers/index.html',
   },
+  {
+    slug: 'voiceover-mac-101',
+    title: 'VoiceOver Mac 101',
+    description:
+      'A hands-on intro to VoiceOver on Mac — how to turn it on, the VO key, navigation commands, and practice with real keyboard shortcuts.',
+    duration: '8–10 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/voiceover-mac-101/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
