@@ -70,6 +70,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/voiceover-mac-101/index.html',
   },
+  {
+    slug: 'introduction-to-nvda',
+    title: 'Introduction to NVDA',
+    description:
+      'A hands-on intro to NVDA on Windows — what it is, why it matters, the NVDA key, reading commands, browse vs focus mode, and jump keys for testing.',
+    duration: '8–10 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/introduction-to-nvda/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
