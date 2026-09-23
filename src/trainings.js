@@ -29,7 +29,7 @@ export const trainings = [
     slug: 'color-contrast-101',
     title: 'Color Contrast 101',
     description:
-      'An interactive training on WCAG color contrast for designers, developers, and QA — why it fails so often, the ratios that matter, how to check them, and common mistakes to avoid.',
+      'An interactive training on WCAG color contrast for designers, developers, and QA: why it fails so often, the ratios that matter, how to check them, and common mistakes to avoid.',
     duration: '10 min',
     difficulty: 'Beginner',
     embedUrl: '/modules/color-contrast-101/index.html',
@@ -47,7 +47,7 @@ export const trainings = [
     slug: 'assistive-technology-101',
     title: 'Introduction to Assistive Technologies',
     description:
-      'A short overview of assistive technology — what it is, who uses it, and how structure and keyboard access make digital products work with the tools people rely on.',
+      'A short overview of assistive technology: what it is, who uses it, and how structure and keyboard access make digital products work with the tools people rely on.',
     duration: '10–15 min',
     difficulty: 'Beginner',
     embedUrl: '/modules/assistive-technology-101/index.html',
@@ -56,7 +56,7 @@ export const trainings = [
     slug: 'introduction-to-screen-readers',
     title: 'Introduction to Screen Readers',
     description:
-      'A light, high-level intro to screen readers — what they do, the major tools people use, how navigation works, and common myths — before the hands-on courses.',
+      'A light, high-level intro to screen readers: what they do, the major tools people use, how navigation works, and common myths, before the hands-on courses.',
     duration: '10–15 min',
     difficulty: 'Beginner',
     embedUrl: '/modules/introduction-to-screen-readers/index.html',
@@ -65,7 +65,7 @@ export const trainings = [
     slug: 'voiceover-mac-101',
     title: 'VoiceOver Mac 101',
     description:
-      'A hands-on intro to VoiceOver on Mac — how to turn it on, the VO key, navigation commands, and practice with real keyboard shortcuts.',
+      'A hands-on intro to VoiceOver on Mac: how to turn it on, the VO key, navigation commands, and practice with real keyboard shortcuts.',
     duration: '8–10 min',
     difficulty: 'Beginner',
     embedUrl: '/modules/voiceover-mac-101/index.html',
@@ -74,7 +74,7 @@ export const trainings = [
     slug: 'introduction-to-nvda',
     title: 'Introduction to NVDA',
     description:
-      'A hands-on intro to NVDA on Windows — what it is, why it matters, the NVDA key, reading commands, browse vs focus mode, and jump keys for testing.',
+      'A hands-on intro to NVDA on Windows: what it is, why it matters, the NVDA key, reading commands, browse vs focus mode, and jump keys for testing.',
     duration: '8–10 min',
     difficulty: 'Beginner',
     embedUrl: '/modules/introduction-to-nvda/index.html',
