@@ -79,6 +79,15 @@ export const trainings = [
     difficulty: 'Beginner',
     embedUrl: '/modules/introduction-to-nvda/index.html',
   },
+  {
+    slug: 'squarespace-a11y-101',
+    title: 'Squarespace Accessibility Basics',
+    description:
+      'An interactive intro to accessibility on Squarespace: practical lessons, do/don’t guidance, a knowledge check, and a downloadable cheatsheet.',
+    duration: '10–15 min',
+    difficulty: 'Beginner',
+    embedUrl: '/modules/squarespace-a11y-101/index.html',
+  },
 ]
 
 export function getTrainingBySlug(slug) {
