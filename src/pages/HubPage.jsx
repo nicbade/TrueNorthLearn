@@ -1,13 +1,10 @@
-import { useEffect } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import TrainingCard from '../components/TrainingCard'
 import { trainings } from '../trainings'
 
 export default function HubPage() {
-  useEffect(() => {
-    document.title = 'Accessibility Training Library | True North Accessibility'
-  }, [])
+  document.title = 'Accessibility Training Library | True North Accessibility'
 
   return (
     <div className="page page--hub">

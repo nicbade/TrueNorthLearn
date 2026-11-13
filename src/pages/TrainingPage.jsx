@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import ThemeToggle from '../components/ThemeToggle'
 import { getTrainingBySlug } from '../trainings'
@@ -30,14 +29,9 @@ function TrainingBarNav({ title }) {
 export default function TrainingPage() {
   const { slug } = useParams()
   const training = getTrainingBySlug(slug)
-
-  useEffect(() => {
-    if (training) {
-      document.title = `${training.title} | True North Accessibility`
-    } else {
-      document.title = 'Training not found | True North Accessibility'
-    }
-  }, [training])
+  document.title = training
+    ? `${training.title} | True North Accessibility`
+    : 'Training not found | True North Accessibility'
 
   if (!training) {
     return (

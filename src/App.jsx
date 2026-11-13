@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import PageViewTracker from './components/PageViewTracker'
 import SkipLink from './components/SkipLink'
 import { ThemeProvider } from './components/ThemeProvider'
 import HubPage from './pages/HubPage'
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/training/:slug" element={<TrainingPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+        <PageViewTracker />
       </BrowserRouter>
     </ThemeProvider>
   )
